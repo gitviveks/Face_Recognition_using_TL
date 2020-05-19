@@ -108,5 +108,35 @@ for layer in model.layers:
 for (i,layer) in enumerate(model.layers):
     print(str(i) + " "+ layer.__class__.__name__, layer.trainable)
 ```
+### Creating function that returns our Fully Connected Head
+```
+def addTopModel(bottom_model, num_classes, D=256):
+    """creates the top or head of the model that will be 
+    placed ontop of the bottom layers"""
+    top_model = bottom_model.output
+    top_model = Flatten(name = "flatten")(top_model)
+    top_model = Dense(D, activation = "relu")(top_model)
+    top_model = Dropout(0.3)(top_model)
+    top_model = Dense(num_classes, activation = "softmax")(top_model)
+    return top_model
+```
+
+
+### Adding our FC Head back onto VGG16
+```
+from keras.models import Sequential
+from keras.layers import Dense, Dropout, Activation, Flatten
+from keras.layers import Conv2D, MaxPooling2D, ZeroPadding2D
+from keras.layers.normalization import BatchNormalization
+from keras.models import Model
+
+num_classes = 17
+
+FC_Head = addTopModel(model, num_classes)
+
+modelnew = Model(inputs=model.input, outputs=FC_Head)
+
+print(modelnew.summary())
+```
 
     
