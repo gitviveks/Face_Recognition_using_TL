@@ -67,4 +67,6 @@ cap.release()
 cv2.destroyAllWindows()      
 print("Collecting Samples Complete")
 ```
-!screenshots/Screenshot1.png
+![GitHub Logo](/images/logo.png)
+Format: ![Screenshot1](screenshots/Screenshot1.png
+)
