@@ -67,3 +67,4 @@ cap.release()
 cv2.destroyAllWindows()      
 print("Collecting Samples Complete")
 ```
+!screenshots/Screenshot1.png
