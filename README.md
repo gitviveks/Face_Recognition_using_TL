@@ -10,7 +10,7 @@ Install following libraires:
 ```
 conda install tensorflow keras opencv-python pillow numpy
 ```
-## Creating images dataset using opencv throgh webcam
+## Creating images dataset using opencv through webcam
 ```
 import cv2
 import numpy as np
