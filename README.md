@@ -39,7 +39,7 @@ def face_extractor(img):
 cap = cv2.VideoCapture(0)
 count = 0
 
-# Collect 500 samples of your face from webcam input
+# Collect 1000 samples of your face from webcam input
 while True:
 
     ret, frame = cap.read()
@@ -60,7 +60,7 @@ while True:
         print("Face not found")
         pass
 
-    if cv2.waitKey(1) == 13 or count == 500: #13 is the Enter Key
+    if cv2.waitKey(1) == 13 or count == 1000: #13 is the Enter Key
         break
         
 cap.release()
